@@ -8,7 +8,7 @@ export const useGetSummary = () =>{
   const params = useSearchParams();
   const from = params.get("from") || "";
   const to = params.get("to") || "";
-  const accountId = params.get("acountId") || "";
+  const accountId = params.get("accountId") || "";
   const query = useQuery({
     queryKey:['summary',{from, to, accountId}],
     queryFn: async () =>{

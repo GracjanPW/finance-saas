@@ -53,7 +53,7 @@ const app = new Hono()
       .leftJoin(categories, eq(transactions.categoryId, categories.id))
       .where(
         and(
-          accountId ? eq(categories.userId, auth.userId):undefined,
+          accountId ? eq(accounts.id, accountId):undefined,
           eq(accounts.userId, auth.userId),
           gte(transactions.date, startDate),
           lte(transactions.date, endDate)    
