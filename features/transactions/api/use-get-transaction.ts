@@ -15,8 +15,10 @@ export const useGetTransaction = (id?:string) =>{
         throw new Error("Failed to fetch transaction");
       }
       const {data} = await response.json();
-      data.amount = convertAmountFromMiliUnits(data.amount)
-      return data
+      return {
+        ...data,
+        amount:convertAmountFromMiliUnits(data.amount)
+      }
     }
   })
   return query;
