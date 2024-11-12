@@ -38,7 +38,7 @@ import { convertAmountToMiliUnits } from "@/lib/utils";
 const generateRandomAmount = (category: typeof categories.$inferInsert) =>{
   switch (category.name) {
     case "Rent":
-      return Math.random()*400*90;
+      return Math.random()*400+90;
     case "Utilities":
       return Math.random()*200+50;
     case "Food":
